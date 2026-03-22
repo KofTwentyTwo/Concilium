@@ -1,0 +1,14 @@
+FROM liquibase/liquibase:4.30.0
+USER root
+RUN apt-get update && apt-get upgrade -y && rm -rf /var/lib/apt/lists/* \
+    && rm -f /liquibase/bin/lpm \
+    && chmod 755 /liquibase
+USER liquibase
+ADD --chmod=644 https://repo1.maven.org/maven2/org/postgresql/postgresql/42.7.2/postgresql-42.7.2.jar /liquibase/lib/postgresql.jar
+COPY concilium-core/src/main/resources/db/ /liquibase/db/
+ENTRYPOINT ["liquibase", \
+  "--changelog-file=db/liquibase/changelog.yaml", \
+  "--url=${LIQUIBASE_URL}", \
+  "--username=${LIQUIBASE_USERNAME}", \
+  "--password=${LIQUIBASE_PASSWORD}", \
+  "update"]
