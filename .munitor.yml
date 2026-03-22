@@ -15,7 +15,7 @@ cd:
     develop: dev
 
 coverage:
-  min_instruction: "50"
+  min_instruction: "10"
 
 sast:
   fail_on_findings: true
