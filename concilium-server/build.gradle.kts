@@ -23,6 +23,7 @@ tasks.shadowJar {
    archiveBaseName.set("concilium")
    archiveClassifier.set("")
    archiveVersion.set("")
+   isZip64 = true
    manifest {
       attributes["Main-Class"] = "com.kof22.concilium.ConciliumServer"
    }
