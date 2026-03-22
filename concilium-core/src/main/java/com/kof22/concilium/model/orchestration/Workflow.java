@@ -1,10 +1,3 @@
-/*******************************************************************************
- ** QRecordEntity for the workflow table.
- **
- ** Represents a durable workflow instance within a master project.  Workflows
- ** coordinate multi-step operations such as initiative decomposition, repo
- ** task execution, validation cycles, and progress reconciliation.
- *******************************************************************************/
 package com.kof22.concilium.model.orchestration;
 
 
@@ -76,11 +69,30 @@ public class Workflow extends QRecordEntity
 
 
    /*******************************************************************************
+    ** Constructor
+    *******************************************************************************/
+   public Workflow()
+   {
+   }
+
+
+
+   /*******************************************************************************
     ** Getter for id
     *******************************************************************************/
    public Long getId()
    {
       return (this.id);
+   }
+
+
+
+   /*******************************************************************************
+    ** Setter for id
+    *******************************************************************************/
+   public void setId(Long id)
+   {
+      this.id = id;
    }
 
 
@@ -107,6 +119,16 @@ public class Workflow extends QRecordEntity
 
 
    /*******************************************************************************
+    ** Setter for masterProjectId
+    *******************************************************************************/
+   public void setMasterProjectId(Long masterProjectId)
+   {
+      this.masterProjectId = masterProjectId;
+   }
+
+
+
+   /*******************************************************************************
     ** Fluent setter for masterProjectId
     *******************************************************************************/
    public Workflow withMasterProjectId(Long masterProjectId)
@@ -123,6 +145,16 @@ public class Workflow extends QRecordEntity
    public String getName()
    {
       return (this.name);
+   }
+
+
+
+   /*******************************************************************************
+    ** Setter for name
+    *******************************************************************************/
+   public void setName(String name)
+   {
+      this.name = name;
    }
 
 
@@ -149,6 +181,16 @@ public class Workflow extends QRecordEntity
 
 
    /*******************************************************************************
+    ** Setter for workflowType
+    *******************************************************************************/
+   public void setWorkflowType(String workflowType)
+   {
+      this.workflowType = workflowType;
+   }
+
+
+
+   /*******************************************************************************
     ** Fluent setter for workflowType
     *******************************************************************************/
    public Workflow withWorkflowType(String workflowType)
@@ -165,6 +207,16 @@ public class Workflow extends QRecordEntity
    public String getCurrentState()
    {
       return (this.currentState);
+   }
+
+
+
+   /*******************************************************************************
+    ** Setter for currentState
+    *******************************************************************************/
+   public void setCurrentState(String currentState)
+   {
+      this.currentState = currentState;
    }
 
 
@@ -191,6 +243,16 @@ public class Workflow extends QRecordEntity
 
 
    /*******************************************************************************
+    ** Setter for waitingOnCondition
+    *******************************************************************************/
+   public void setWaitingOnCondition(String waitingOnCondition)
+   {
+      this.waitingOnCondition = waitingOnCondition;
+   }
+
+
+
+   /*******************************************************************************
     ** Fluent setter for waitingOnCondition
     *******************************************************************************/
    public Workflow withWaitingOnCondition(String waitingOnCondition)
@@ -207,6 +269,16 @@ public class Workflow extends QRecordEntity
    public String getContextJson()
    {
       return (this.contextJson);
+   }
+
+
+
+   /*******************************************************************************
+    ** Setter for contextJson
+    *******************************************************************************/
+   public void setContextJson(String contextJson)
+   {
+      this.contextJson = contextJson;
    }
 
 
@@ -233,6 +305,16 @@ public class Workflow extends QRecordEntity
 
 
    /*******************************************************************************
+    ** Setter for startedAt
+    *******************************************************************************/
+   public void setStartedAt(Instant startedAt)
+   {
+      this.startedAt = startedAt;
+   }
+
+
+
+   /*******************************************************************************
     ** Fluent setter for startedAt
     *******************************************************************************/
    public Workflow withStartedAt(Instant startedAt)
@@ -249,6 +331,16 @@ public class Workflow extends QRecordEntity
    public Instant getCompletedAt()
    {
       return (this.completedAt);
+   }
+
+
+
+   /*******************************************************************************
+    ** Setter for completedAt
+    *******************************************************************************/
+   public void setCompletedAt(Instant completedAt)
+   {
+      this.completedAt = completedAt;
    }
 
 
@@ -275,6 +367,16 @@ public class Workflow extends QRecordEntity
 
 
    /*******************************************************************************
+    ** Setter for createDate
+    *******************************************************************************/
+   public void setCreateDate(Instant createDate)
+   {
+      this.createDate = createDate;
+   }
+
+
+
+   /*******************************************************************************
     ** Fluent setter for createDate
     *******************************************************************************/
    public Workflow withCreateDate(Instant createDate)
@@ -291,6 +393,16 @@ public class Workflow extends QRecordEntity
    public Instant getModifyDate()
    {
       return (this.modifyDate);
+   }
+
+
+
+   /*******************************************************************************
+    ** Setter for modifyDate
+    *******************************************************************************/
+   public void setModifyDate(Instant modifyDate)
+   {
+      this.modifyDate = modifyDate;
    }
 
 

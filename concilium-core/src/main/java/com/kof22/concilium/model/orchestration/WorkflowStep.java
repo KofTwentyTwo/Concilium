@@ -1,11 +1,3 @@
-/*******************************************************************************
- ** QRecordEntity for the workflow_step table.
- **
- ** Represents a single step within a workflow.  Each step has a type (such as
- ** context assembly, governance gate, execution, or dispatch), tracks its own
- ** status independently, and may optionally require human approval before
- ** proceeding.
- *******************************************************************************/
 package com.kof22.concilium.model.orchestration;
 
 
@@ -97,6 +89,16 @@ public class WorkflowStep extends QRecordEntity
 
 
    /*******************************************************************************
+    ** Setter for id
+    *******************************************************************************/
+   public void setId(Long id)
+   {
+      this.id = id;
+   }
+
+
+
+   /*******************************************************************************
     ** Fluent setter for id
     *******************************************************************************/
    public WorkflowStep withId(Long id)
@@ -115,6 +117,15 @@ public class WorkflowStep extends QRecordEntity
       return (this.workflowId);
    }
 
+
+
+   /*******************************************************************************
+    ** Setter for workflowId
+    *******************************************************************************/
+   public void setWorkflowId(Long workflowId)
+   {
+      this.workflowId = workflowId;
+   }
 
 
    /*******************************************************************************
@@ -139,6 +150,15 @@ public class WorkflowStep extends QRecordEntity
 
 
    /*******************************************************************************
+    ** Setter for stepOrder
+    *******************************************************************************/
+   public void setStepOrder(Integer stepOrder)
+   {
+      this.stepOrder = stepOrder;
+   }
+
+
+   /*******************************************************************************
     ** Fluent setter for stepOrder
     *******************************************************************************/
    public WorkflowStep withStepOrder(Integer stepOrder)
@@ -157,6 +177,15 @@ public class WorkflowStep extends QRecordEntity
       return (this.name);
    }
 
+
+
+   /*******************************************************************************
+    ** Setter for name
+    *******************************************************************************/
+   public void setName(String name)
+   {
+      this.name = name;
+   }
 
 
    /*******************************************************************************
@@ -181,6 +210,15 @@ public class WorkflowStep extends QRecordEntity
 
 
    /*******************************************************************************
+    ** Setter for stepType
+    *******************************************************************************/
+   public void setStepType(String stepType)
+   {
+      this.stepType = stepType;
+   }
+
+
+   /*******************************************************************************
     ** Fluent setter for stepType
     *******************************************************************************/
    public WorkflowStep withStepType(String stepType)
@@ -199,6 +237,15 @@ public class WorkflowStep extends QRecordEntity
       return (this.status);
    }
 
+
+
+   /*******************************************************************************
+    ** Setter for status
+    *******************************************************************************/
+   public void setStatus(String status)
+   {
+      this.status = status;
+   }
 
 
    /*******************************************************************************
@@ -223,6 +270,15 @@ public class WorkflowStep extends QRecordEntity
 
 
    /*******************************************************************************
+    ** Setter for inputJson
+    *******************************************************************************/
+   public void setInputJson(String inputJson)
+   {
+      this.inputJson = inputJson;
+   }
+
+
+   /*******************************************************************************
     ** Fluent setter for inputJson
     *******************************************************************************/
    public WorkflowStep withInputJson(String inputJson)
@@ -241,6 +297,15 @@ public class WorkflowStep extends QRecordEntity
       return (this.outputJson);
    }
 
+
+
+   /*******************************************************************************
+    ** Setter for outputJson
+    *******************************************************************************/
+   public void setOutputJson(String outputJson)
+   {
+      this.outputJson = outputJson;
+   }
 
 
    /*******************************************************************************
@@ -265,6 +330,15 @@ public class WorkflowStep extends QRecordEntity
 
 
    /*******************************************************************************
+    ** Setter for approvalRequired
+    *******************************************************************************/
+   public void setApprovalRequired(Boolean approvalRequired)
+   {
+      this.approvalRequired = approvalRequired;
+   }
+
+
+   /*******************************************************************************
     ** Fluent setter for approvalRequired
     *******************************************************************************/
    public WorkflowStep withApprovalRequired(Boolean approvalRequired)
@@ -283,6 +357,15 @@ public class WorkflowStep extends QRecordEntity
       return (this.approvalGranted);
    }
 
+
+
+   /*******************************************************************************
+    ** Setter for approvalGranted
+    *******************************************************************************/
+   public void setApprovalGranted(Boolean approvalGranted)
+   {
+      this.approvalGranted = approvalGranted;
+   }
 
 
    /*******************************************************************************
@@ -307,6 +390,15 @@ public class WorkflowStep extends QRecordEntity
 
 
    /*******************************************************************************
+    ** Setter for startedAt
+    *******************************************************************************/
+   public void setStartedAt(Instant startedAt)
+   {
+      this.startedAt = startedAt;
+   }
+
+
+   /*******************************************************************************
     ** Fluent setter for startedAt
     *******************************************************************************/
    public WorkflowStep withStartedAt(Instant startedAt)
@@ -325,6 +417,15 @@ public class WorkflowStep extends QRecordEntity
       return (this.completedAt);
    }
 
+
+
+   /*******************************************************************************
+    ** Setter for completedAt
+    *******************************************************************************/
+   public void setCompletedAt(Instant completedAt)
+   {
+      this.completedAt = completedAt;
+   }
 
 
    /*******************************************************************************
@@ -349,6 +450,15 @@ public class WorkflowStep extends QRecordEntity
 
 
    /*******************************************************************************
+    ** Setter for createDate
+    *******************************************************************************/
+   public void setCreateDate(Instant createDate)
+   {
+      this.createDate = createDate;
+   }
+
+
+   /*******************************************************************************
     ** Fluent setter for createDate
     *******************************************************************************/
    public WorkflowStep withCreateDate(Instant createDate)
@@ -367,6 +477,15 @@ public class WorkflowStep extends QRecordEntity
       return (this.modifyDate);
    }
 
+
+
+   /*******************************************************************************
+    ** Setter for modifyDate
+    *******************************************************************************/
+   public void setModifyDate(Instant modifyDate)
+   {
+      this.modifyDate = modifyDate;
+   }
 
 
    /*******************************************************************************

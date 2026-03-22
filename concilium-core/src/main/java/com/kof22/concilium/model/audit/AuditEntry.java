@@ -1,11 +1,3 @@
-/*******************************************************************************
- ** QRecordEntity for the audit_entry table.
- **
- ** Represents an immutable audit trail record.  Audit entries capture actions
- ** taken against entities within the system, including the actor (agent),
- ** the affected entity, a human-readable description, and a JSON diff of
- ** changes.  Audit entries have no modifyDate because they are append-only.
- *******************************************************************************/
 package com.kof22.concilium.model.audit;
 
 
@@ -78,11 +70,30 @@ public class AuditEntry extends QRecordEntity
 
 
    /*******************************************************************************
+    ** Constructor
+    *******************************************************************************/
+   public AuditEntry()
+   {
+   }
+
+
+
+   /*******************************************************************************
     ** Getter for id
     *******************************************************************************/
    public Long getId()
    {
       return (this.id);
+   }
+
+
+
+   /*******************************************************************************
+    ** Setter for id
+    *******************************************************************************/
+   public void setId(Long id)
+   {
+      this.id = id;
    }
 
 
@@ -109,6 +120,16 @@ public class AuditEntry extends QRecordEntity
 
 
    /*******************************************************************************
+    ** Setter for masterProjectId
+    *******************************************************************************/
+   public void setMasterProjectId(Long masterProjectId)
+   {
+      this.masterProjectId = masterProjectId;
+   }
+
+
+
+   /*******************************************************************************
     ** Fluent setter for masterProjectId
     *******************************************************************************/
    public AuditEntry withMasterProjectId(Long masterProjectId)
@@ -125,6 +146,16 @@ public class AuditEntry extends QRecordEntity
    public Long getAgentId()
    {
       return (this.agentId);
+   }
+
+
+
+   /*******************************************************************************
+    ** Setter for agentId
+    *******************************************************************************/
+   public void setAgentId(Long agentId)
+   {
+      this.agentId = agentId;
    }
 
 
@@ -151,6 +182,16 @@ public class AuditEntry extends QRecordEntity
 
 
    /*******************************************************************************
+    ** Setter for agentExecutionId
+    *******************************************************************************/
+   public void setAgentExecutionId(Long agentExecutionId)
+   {
+      this.agentExecutionId = agentExecutionId;
+   }
+
+
+
+   /*******************************************************************************
     ** Fluent setter for agentExecutionId
     *******************************************************************************/
    public AuditEntry withAgentExecutionId(Long agentExecutionId)
@@ -167,6 +208,16 @@ public class AuditEntry extends QRecordEntity
    public Long getWorkItemId()
    {
       return (this.workItemId);
+   }
+
+
+
+   /*******************************************************************************
+    ** Setter for workItemId
+    *******************************************************************************/
+   public void setWorkItemId(Long workItemId)
+   {
+      this.workItemId = workItemId;
    }
 
 
@@ -193,6 +244,16 @@ public class AuditEntry extends QRecordEntity
 
 
    /*******************************************************************************
+    ** Setter for entityType
+    *******************************************************************************/
+   public void setEntityType(String entityType)
+   {
+      this.entityType = entityType;
+   }
+
+
+
+   /*******************************************************************************
     ** Fluent setter for entityType
     *******************************************************************************/
    public AuditEntry withEntityType(String entityType)
@@ -209,6 +270,16 @@ public class AuditEntry extends QRecordEntity
    public Long getEntityId()
    {
       return (this.entityId);
+   }
+
+
+
+   /*******************************************************************************
+    ** Setter for entityId
+    *******************************************************************************/
+   public void setEntityId(Long entityId)
+   {
+      this.entityId = entityId;
    }
 
 
@@ -235,6 +306,16 @@ public class AuditEntry extends QRecordEntity
 
 
    /*******************************************************************************
+    ** Setter for action
+    *******************************************************************************/
+   public void setAction(String action)
+   {
+      this.action = action;
+   }
+
+
+
+   /*******************************************************************************
     ** Fluent setter for action
     *******************************************************************************/
    public AuditEntry withAction(String action)
@@ -251,6 +332,16 @@ public class AuditEntry extends QRecordEntity
    public String getDetails()
    {
       return (this.details);
+   }
+
+
+
+   /*******************************************************************************
+    ** Setter for details
+    *******************************************************************************/
+   public void setDetails(String details)
+   {
+      this.details = details;
    }
 
 
@@ -277,6 +368,16 @@ public class AuditEntry extends QRecordEntity
 
 
    /*******************************************************************************
+    ** Setter for changesJson
+    *******************************************************************************/
+   public void setChangesJson(String changesJson)
+   {
+      this.changesJson = changesJson;
+   }
+
+
+
+   /*******************************************************************************
     ** Fluent setter for changesJson
     *******************************************************************************/
    public AuditEntry withChangesJson(String changesJson)
@@ -293,6 +394,16 @@ public class AuditEntry extends QRecordEntity
    public Instant getCreateDate()
    {
       return (this.createDate);
+   }
+
+
+
+   /*******************************************************************************
+    ** Setter for createDate
+    *******************************************************************************/
+   public void setCreateDate(Instant createDate)
+   {
+      this.createDate = createDate;
    }
 
 

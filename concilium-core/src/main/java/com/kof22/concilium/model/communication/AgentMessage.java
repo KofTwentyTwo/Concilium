@@ -1,10 +1,3 @@
-/*******************************************************************************
- ** QRecordEntity for the agent_message table.
- **
- ** Represents a message exchanged between agents within a master project.
- ** Messages carry typed payloads (JSON) and track delivery status through
- ** pending, delivered, and acknowledged states.
- *******************************************************************************/
 package com.kof22.concilium.model.communication;
 
 
@@ -78,11 +71,30 @@ public class AgentMessage extends QRecordEntity
 
 
    /*******************************************************************************
+    ** Constructor
+    *******************************************************************************/
+   public AgentMessage()
+   {
+   }
+
+
+
+   /*******************************************************************************
     ** Getter for id
     *******************************************************************************/
    public Long getId()
    {
       return (this.id);
+   }
+
+
+
+   /*******************************************************************************
+    ** Setter for id
+    *******************************************************************************/
+   public void setId(Long id)
+   {
+      this.id = id;
    }
 
 
@@ -109,6 +121,16 @@ public class AgentMessage extends QRecordEntity
 
 
    /*******************************************************************************
+    ** Setter for masterProjectId
+    *******************************************************************************/
+   public void setMasterProjectId(Long masterProjectId)
+   {
+      this.masterProjectId = masterProjectId;
+   }
+
+
+
+   /*******************************************************************************
     ** Fluent setter for masterProjectId
     *******************************************************************************/
    public AgentMessage withMasterProjectId(Long masterProjectId)
@@ -125,6 +147,16 @@ public class AgentMessage extends QRecordEntity
    public Long getSenderAgentId()
    {
       return (this.senderAgentId);
+   }
+
+
+
+   /*******************************************************************************
+    ** Setter for senderAgentId
+    *******************************************************************************/
+   public void setSenderAgentId(Long senderAgentId)
+   {
+      this.senderAgentId = senderAgentId;
    }
 
 
@@ -151,6 +183,16 @@ public class AgentMessage extends QRecordEntity
 
 
    /*******************************************************************************
+    ** Setter for recipientAgentId
+    *******************************************************************************/
+   public void setRecipientAgentId(Long recipientAgentId)
+   {
+      this.recipientAgentId = recipientAgentId;
+   }
+
+
+
+   /*******************************************************************************
     ** Fluent setter for recipientAgentId
     *******************************************************************************/
    public AgentMessage withRecipientAgentId(Long recipientAgentId)
@@ -167,6 +209,16 @@ public class AgentMessage extends QRecordEntity
    public Long getWorkItemId()
    {
       return (this.workItemId);
+   }
+
+
+
+   /*******************************************************************************
+    ** Setter for workItemId
+    *******************************************************************************/
+   public void setWorkItemId(Long workItemId)
+   {
+      this.workItemId = workItemId;
    }
 
 
@@ -193,6 +245,16 @@ public class AgentMessage extends QRecordEntity
 
 
    /*******************************************************************************
+    ** Setter for messageType
+    *******************************************************************************/
+   public void setMessageType(String messageType)
+   {
+      this.messageType = messageType;
+   }
+
+
+
+   /*******************************************************************************
     ** Fluent setter for messageType
     *******************************************************************************/
    public AgentMessage withMessageType(String messageType)
@@ -209,6 +271,16 @@ public class AgentMessage extends QRecordEntity
    public String getPayload()
    {
       return (this.payload);
+   }
+
+
+
+   /*******************************************************************************
+    ** Setter for payload
+    *******************************************************************************/
+   public void setPayload(String payload)
+   {
+      this.payload = payload;
    }
 
 
@@ -235,6 +307,16 @@ public class AgentMessage extends QRecordEntity
 
 
    /*******************************************************************************
+    ** Setter for referencedArtifacts
+    *******************************************************************************/
+   public void setReferencedArtifacts(String referencedArtifacts)
+   {
+      this.referencedArtifacts = referencedArtifacts;
+   }
+
+
+
+   /*******************************************************************************
     ** Fluent setter for referencedArtifacts
     *******************************************************************************/
    public AgentMessage withReferencedArtifacts(String referencedArtifacts)
@@ -251,6 +333,16 @@ public class AgentMessage extends QRecordEntity
    public String getStatus()
    {
       return (this.status);
+   }
+
+
+
+   /*******************************************************************************
+    ** Setter for status
+    *******************************************************************************/
+   public void setStatus(String status)
+   {
+      this.status = status;
    }
 
 
@@ -277,6 +369,16 @@ public class AgentMessage extends QRecordEntity
 
 
    /*******************************************************************************
+    ** Setter for createDate
+    *******************************************************************************/
+   public void setCreateDate(Instant createDate)
+   {
+      this.createDate = createDate;
+   }
+
+
+
+   /*******************************************************************************
     ** Fluent setter for createDate
     *******************************************************************************/
    public AgentMessage withCreateDate(Instant createDate)
@@ -293,6 +395,16 @@ public class AgentMessage extends QRecordEntity
    public Instant getModifyDate()
    {
       return (this.modifyDate);
+   }
+
+
+
+   /*******************************************************************************
+    ** Setter for modifyDate
+    *******************************************************************************/
+   public void setModifyDate(Instant modifyDate)
+   {
+      this.modifyDate = modifyDate;
    }
 
 
