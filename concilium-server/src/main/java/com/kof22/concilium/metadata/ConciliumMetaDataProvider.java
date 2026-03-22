@@ -8,8 +8,6 @@ import com.kingsrook.qqq.backend.core.model.metadata.QAuthenticationType;
 import com.kingsrook.qqq.backend.core.model.metadata.QBackendMetaData;
 import com.kingsrook.qqq.backend.core.model.metadata.QInstance;
 import com.kingsrook.qqq.backend.core.model.metadata.authentication.QAuthenticationMetaData;
-import com.kingsrook.qqq.backend.core.model.metadata.fields.QFieldMetaData;
-import com.kingsrook.qqq.backend.core.model.metadata.fields.QFieldType;
 import com.kingsrook.qqq.backend.core.model.metadata.tables.QTableMetaData;
 import com.kingsrook.qqq.backend.core.modules.backend.implementations.memory.MemoryBackendModule;
 
@@ -34,10 +32,22 @@ public class ConciliumMetaDataProvider extends AbstractQQQApplication
 
       qInstance.addBackend(defineMemoryBackend());
       qInstance.withInstanceDefaultAuthentication(defineAuthentication());
-      qInstance.addTable(defineMasterProjectTable());
 
       MetaDataProducerHelper.processAllMetaDataProducersInPackage(qInstance, "com.kof22.concilium.model");
       MetaDataProducerHelper.processAllMetaDataProducersInPackage(qInstance, "com.kof22.concilium.metadata");
+
+      /////////////////////////////////////////////////////////////////////////
+      // Set the default backend on all auto-discovered tables that do not   //
+      // already have one. The @QMetaDataProducingEntity annotation does not //
+      // set a backend, so we assign memory for now (Postgres in Phase 3).   //
+      /////////////////////////////////////////////////////////////////////////
+      for(QTableMetaData table : qInstance.getTables().values())
+      {
+         if(table.getBackendName() == null)
+         {
+            table.setBackendName(MEMORY_BACKEND_NAME);
+         }
+      }
 
       return qInstance;
    }
@@ -45,31 +55,13 @@ public class ConciliumMetaDataProvider extends AbstractQQQApplication
 
 
    /*******************************************************************************
-    ** Define the in-memory backend (for dev/test, replaced by Postgres in Plan 2).
+    ** Define the in-memory backend (for dev/test, replaced by Postgres later).
     *******************************************************************************/
    private QBackendMetaData defineMemoryBackend()
    {
       return new QBackendMetaData()
          .withName(MEMORY_BACKEND_NAME)
          .withBackendType(MemoryBackendModule.class);
-   }
-
-
-
-   /*******************************************************************************
-    ** Define the master_project table (bootstrap placeholder -- will be replaced
-    ** by entity-driven MetaDataProducers in a later task).
-    *******************************************************************************/
-   private QTableMetaData defineMasterProjectTable()
-   {
-      return new QTableMetaData()
-         .withName("master_project")
-         .withLabel("Master Project")
-         .withBackendName(MEMORY_BACKEND_NAME)
-         .withPrimaryKeyField("id")
-         .withField(new QFieldMetaData("id", QFieldType.INTEGER))
-         .withField(new QFieldMetaData("name", QFieldType.STRING))
-         .withField(new QFieldMetaData("description", QFieldType.STRING));
    }
 
 
