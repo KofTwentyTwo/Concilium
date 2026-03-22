@@ -24,7 +24,8 @@ sbom: true
 owasp: false
 
 health:
-  enabled: false
+  path: /api/health
+  port: "8000"
 
 contexts:
   registry: ghcr
