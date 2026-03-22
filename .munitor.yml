@@ -1,5 +1,5 @@
 pipeline: gradle-webapp
-orb_version: dev:snapshot
+orb_version: "0.2"
 
 image_name: concilium
 java_version: "21"
