@@ -1,0 +1,32 @@
+pipeline: gradle-webapp
+orb_version: dev:snapshot
+
+image_name: concilium
+java_version: "21"
+server_module: "concilium-server"
+
+docker:
+  registry: ghcr.io/koftwentytwo
+
+cd:
+  repo: KofTwentyTwo/Concilium-CD
+  format: kustomize
+  env:
+    develop: dev
+
+coverage:
+  min_instruction: "10"
+
+sast:
+  fail_on_findings: true
+
+sbom: true
+owasp: false
+
+health:
+  path: /api/health
+  port: "8000"
+
+contexts:
+  registry: ghcr
+  github: github
