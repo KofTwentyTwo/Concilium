@@ -1,8 +1,9 @@
-pipeline: java-webapp
+pipeline: gradle-webapp
 orb_version: "0.1"
 
 image_name: concilium
 java_version: "21"
+server_module: "concilium-server"
 
 docker:
   registry: ghcr.io/koftwentytwo
