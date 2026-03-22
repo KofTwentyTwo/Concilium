@@ -41,5 +41,6 @@ subprojects {
    dependencies {
       testImplementation(libs.findLibrary("junit-jupiter").orElseThrow())
       testImplementation(libs.findLibrary("assertj-core").orElseThrow())
+      testRuntimeOnly(libs.findLibrary("junit-platform-launcher").orElseThrow())
    }
 }
