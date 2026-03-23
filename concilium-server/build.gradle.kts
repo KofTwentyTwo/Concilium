@@ -12,6 +12,8 @@ dependencies {
    implementation(libs.qqq.middleware.picocli)
    implementation(libs.qqq.middleware.health)
    implementation(libs.qqq.frontend.material.dashboard)
+   implementation(libs.jackson.databind)
+   implementation(libs.jackson.datatype.jsr310)
    implementation(libs.slf4j.simple)
    implementation(libs.log4j.api)
    implementation(libs.log4j.core)
