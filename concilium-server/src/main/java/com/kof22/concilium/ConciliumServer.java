@@ -4,6 +4,7 @@ package com.kof22.concilium;
 import com.kingsrook.qqq.backend.core.logging.LogPair;
 import com.kingsrook.qqq.backend.core.logging.QLogger;
 import com.kingsrook.qqq.middleware.javalin.QApplicationJavalinServer;
+import com.kof22.concilium.events.EventBroadcaster;
 import com.kof22.concilium.metadata.ConciliumMetaDataProvider;
 
 
@@ -40,6 +41,20 @@ public class ConciliumServer
          QApplicationJavalinServer javalinServer = new QApplicationJavalinServer(new ConciliumMetaDataProvider())
             .withServeFrontendMaterialDashboard(true)
             .withPort(port);
+
+         ////////////////////////////////////////////////////////////////
+         // Register WebSocket endpoint for real-time event streaming //
+         // via the Javalin configuration customizer hook.            //
+         ////////////////////////////////////////////////////////////////
+         javalinServer.withJavalinConfigurationCustomizer(javalin ->
+         {
+            javalin.ws("/ws/events", ws ->
+            {
+               ws.onConnect(EventBroadcaster::addClient);
+               ws.onClose(EventBroadcaster::removeClient);
+               ws.onError(ctx -> EventBroadcaster.removeClient(ctx));
+            });
+         });
 
          javalinServer.start();
 
