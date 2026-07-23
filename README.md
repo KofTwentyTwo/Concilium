@@ -13,7 +13,9 @@ Concilium coordinates planning, issue-backed work, architecture awareness, and d
 
 Concilium is **planner/coordinator first**. It is not a coding chatbot. Its role is to orchestrate planning, issue-backed work, architecture awareness, and delivery convergence.
 
-## Architecture
+## Architecture & Agent Coordination
+
+![Concilium Master-Agent Architecture & Topology](docs/architecture.png)
 
 | Layer | Technology |
 |---|---|
