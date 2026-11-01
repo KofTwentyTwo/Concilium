@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+
+- Depend on the released QQQ 0.40.0 instead of the unpublished 0.40.0-SNAPSHOT so CI resolves from Maven Central
+
 ### Added
 
 - Gradle multi-module project structure (core, orchestration, integrations, memory, server)

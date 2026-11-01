@@ -1,5 +1,5 @@
 [versions]
-qqq = "0.40.0-SNAPSHOT"
+qqq = "0.40.0"
 java = "21"
 postgres = "42.7.2"
 liquibase = "4.19.0"
