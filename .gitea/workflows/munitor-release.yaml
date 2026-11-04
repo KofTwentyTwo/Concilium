@@ -1,0 +1,34 @@
+name: Original Munitor release lifecycle
+'on':
+  push:
+    branches:
+    - develop
+    - staging
+    - main
+    - release/**
+  workflow_dispatch: {}
+permissions:
+  contents: read
+  actions: read
+jobs:
+  original:
+    if: ${{ github.event_name != 'push' || !contains(github.event.head_commit.message, '[skip ci]') }}
+    permissions:
+      contents: write
+      actions: read
+    uses: self:KofTwentyTwo/platform-ci/.gitea/workflows/munitor-release.yaml@kof-release-v1
+    with:
+      runner: linux-small
+      build-runner: browser-build
+      image-runner: container-build
+      profile: gradle-webapp
+      java-version: '21'
+      image: koftwentytwo/concilium
+      coverage: '1'
+      sast-fail-on-findings: true
+      sbom: true
+      health-port: '8000'
+      health-path: /api/health
+      cd-repository: KofTwentyTwo/Concilium-CD
+      cd-repository-id: '21'
+      cd-branch: main
